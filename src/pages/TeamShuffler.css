@@ -1,0 +1,157 @@
+/* 🌿 Page Background */
+.ts-page-bg {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #e6f4ea, #f8fff8, #ffffff);
+  animation: bgShift 14s ease infinite;
+}
+
+/* Title */
+.ts-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #2e7d32;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 10px rgba(46,125,50,0.3);
+}
+
+/* Universal Card */
+.ts-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.ts-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(46,125,50,0.22);
+}
+
+/* Saved Cards (NO hover) */
+.ts-saved-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px !important;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  height: 100%;
+}
+
+/* Inputs */
+.ts-label {
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.ts-input {
+  border-radius: 12px !important;
+  border: 1px solid rgba(46, 125, 50, 0.25) !important;
+  padding: 10px;
+}
+
+/* Buttons */
+.ts-btn {
+  background: linear-gradient(90deg, #198754, #66bb6a);
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 12px !important;
+  font-weight: 600;
+  color: white !important;
+}
+
+.ts-btn-outline {
+  border: 2px solid #198754 !important;
+  color: #198754 !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 10px 20px !important;
+}
+
+.ts-btn:hover,
+.ts-btn-outline:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(46,125,50,0.25);
+}
+
+/* Section title */
+.ts-subtitle {
+  font-size: 1.6rem;
+  color: #2e7d32;
+  font-weight: 700;
+  margin: 25px 0 18px 0;
+}
+
+/* Team Title */
+.ts-team-title {
+  color: #198754;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+/* Player Item */
+.ts-player-item {
+  border: none !important;
+  background: rgba(25,135,84,0.06);
+  margin-bottom: 6px;
+  border-radius: 10px;
+  padding: 10px !important;
+}
+
+/* Action Buttons */
+.ts-action-btns {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Background Animation */
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Toast Notification */
+.ts-toast {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: #2e7d32;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-weight: 600;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: tsToastAnim 0.6s forwards;
+}
+
+@keyframes tsToastAnim {
+  0% { opacity: 0; transform: translateY(30px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.ts-toast.hide {
+  animation: tsToastHide 0.6s forwards;
+}
+
+@keyframes tsToastHide {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(30px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ts-title { font-size: 2rem; }
+  .ts-card { padding: 14px; }
+}

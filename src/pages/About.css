@@ -1,0 +1,218 @@
+.about-container {
+  width: 100%;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-size: 200% 200%, 80px 80px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  animation: gradientFlow 18s ease infinite;
+  background-position: center calc(var(--scroll-offset, 0px));
+  transition: all 0.4s ease;
+}
+
+/* 🌿 USER THEME (Green) */
+.user-theme {
+  background-image:
+    linear-gradient(135deg, #e6f4ea, #f8fff8, #ffffff),
+    radial-gradient(circle, rgba(40,167,69,0.08) 1px, transparent 1px);
+  color: #1b5e20;
+}
+
+.user-theme .about-title,
+.user-theme .section-title {
+  color: #2e7d32;
+}
+
+.user-theme .about-text,
+.user-theme .features-list li,
+.user-theme .stats-container div {
+  color: #145a32;
+}
+
+/* 💙 OWNER THEME (Blue) */
+.owner-theme {
+  background-image:
+    linear-gradient(135deg, #d8e9ff, #f2f7ff, #ffffff),
+    radial-gradient(circle, rgba(0,123,255,0.08) 1px, transparent 1px);
+  color: #004a99;
+}
+
+.owner-theme .about-title,
+.owner-theme .section-title {
+  color: #007bff;
+}
+
+.owner-theme .about-text,
+.owner-theme .features-list li,
+.owner-theme .stats-container div {
+  color: #004080;
+}
+
+/* Sporty pattern background overlay */
+.about-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(120deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(240deg, rgba(255,255,255,0.05) 25%, transparent 25%);
+  background-size: 60px 60px;
+  animation: patternMove 20s linear infinite;
+  z-index: 0;
+}
+
+.about-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Titles and text */
+.about-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Center alignment fix */
+.center-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Lists */
+.features-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 2;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+/* Team Shuffler */
+.about-teamshuffler {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 40px 20px;
+  border-radius: 16px;
+  margin: 50px auto;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-teamshuffler:hover {
+  transform: scale(1.02);
+}
+
+/* Category tags */
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.category-tags span {
+  background-color: rgba(0, 123, 255, 0.9);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-theme .category-tags span {
+  background-color: #1b5e20;
+}
+
+.category-tags span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* CTA button */
+.apply-now-button {
+  color: white;
+  padding: 12px 26px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.4s ease;
+  background-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+}
+
+.user-theme .apply-now-button {
+  background-color: #228b22;
+  box-shadow: 0 4px 12px rgba(46,125,50,0.3);
+}
+
+.apply-now-button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+/* Achievements & Testimonials */
+.about-stats,
+.about-testimonials {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: rgba(255,255,255,0.7);
+  transition: transform 0.3s ease;
+}
+
+.about-stats:hover,
+.about-testimonials:hover {
+  transform: translateY(-4px);
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes patternMove {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 60px 60px, -60px -60px; }
+}

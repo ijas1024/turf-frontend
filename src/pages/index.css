@@ -1,0 +1,207 @@
+/* index.css – Styles for the landing (index) page */
+
+.index-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* 🎥 Background video layer */
+.index-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  z-index: -2;
+}
+
+/* Overlay gradient */
+.index-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 80, 60, 0.3)
+  );
+  z-index: -1;
+}
+
+/* Content section */
+.index-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 3rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-out;
+}
+
+
+.index-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e90ff, #00b894);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Subtle animated background overlay */
+.index-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1612865547593-42c49e6b8b7a?auto=format&fit=crop&w=1400&q=80")
+    no-repeat center center/cover;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* Page content */
+.index-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Header */
+.index-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle */
+.index-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Buttons */
+.index-buttons .btn {
+  border-radius: 30px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.index-buttons .btn-light:hover {
+  background-color: #f0f0f0;
+  color: #1e90ff;
+  transform: translateY(-2px);
+}
+
+.index-buttons .btn-outline-light:hover {
+  background-color: #fff;
+  color: #00b894;
+  transform: translateY(-2px);
+}
+
+/* Keyframe animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .index-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .index-content p {
+    font-size: 1rem;
+  }
+}
+/* ===== Video Background Layer ===== */
+.index-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45; /* softness of motion */
+  z-index: -2;
+}
+
+/* Optional dark overlay to ensure text readability */
+.index-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 80, 60, 0.3));
+  z-index: -1;
+}
+/* Smooth fade-in animation */
+.fade-video {
+  animation: videoFadeIn 2s ease-in forwards;
+  opacity: 0;
+}
+@keyframes videoFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 0.45; }
+}
+
+.fade-in {
+  animation: pageFadeIn 1.5s ease forwards;
+}
+@keyframes pageFadeIn {
+  0% { opacity: 0; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+/* 🔥 Spoto logo intro animation */
+.spoto-logo {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  animation: logoFade 2.5s ease-in-out forwards;
+}
+
+.spoto-logo h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(46,125,50,0.9), 0 0 40px rgba(102,187,106,0.7);
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+@keyframes logoFade {
+  0% { opacity: 0; transform: translate(-50%, -60%) scale(0.95); }
+  40% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+}
