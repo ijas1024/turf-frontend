@@ -64,7 +64,7 @@ function TeamShuffler() {
     setSaving(true);
 
     try {
-      const bookingRes = await fetch("http://127.0.0.1:8000/api/bookings/", {
+      const bookingRes = await fetch("https://spoto-turf-booker-backend.onrender.com/api/bookings/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -95,7 +95,7 @@ function TeamShuffler() {
       };
 
       const res = await fetch(
-        `http://127.0.0.1:8000/api/bookings/${latest.id}/team-shuffler/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/bookings/${latest.id}/team-shuffler/`,
         {
           method: "POST",
           headers: {
@@ -153,7 +153,7 @@ function TeamShuffler() {
     setLoading(true);
 
     try {
-      const resBooking = await fetch("http://127.0.0.1:8000/api/bookings/", {
+      const resBooking = await fetch("https://spoto-turf-booker-backend.onrender.com/api/bookings/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -172,7 +172,7 @@ function TeamShuffler() {
       if (!latest) return setLoading(false);
 
       const res = await fetch(
-        `http://127.0.0.1:8000/api/bookings/${latest.id}/team-shuffler/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/bookings/${latest.id}/team-shuffler/`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

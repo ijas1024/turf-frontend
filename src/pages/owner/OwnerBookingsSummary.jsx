@@ -29,7 +29,7 @@ function OwnerBookingsSummary() {
       setError(null);
       const token = localStorage.getItem("access");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/owner/bookings-summary/?filter=${filterValue}`,
+        `https://spoto-turf-booker-backend.onrender.com/api/owner/bookings-summary/?filter=${filterValue}`,
         {
           headers: {
             "Content-Type": "application/json",

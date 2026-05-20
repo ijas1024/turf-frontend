@@ -21,7 +21,7 @@ function Index() {
     <div className={`index-page ${fadeIn ? "fade-in" : ""}`}>
       {/* 🎥 Background Video */}
       <video autoPlay loop muted playsInline className="index-bg-video fade-video">
-        <source src="http://127.0.0.1:8000/media/backgrounds/index-gif.mp4" type="video/mp4" />
+        <source src="https://spoto-turf-booker-backend.onrender.com/media/backgrounds/index-gif.mp4" type="video/mp4" />
       </video>
       <div className="index-overlay"></div>
 

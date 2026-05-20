@@ -15,14 +15,14 @@ function OwnerBookingRequests() {
       let token = localStorage.getItem("access");
       if (!token) throw new Error("No token found");
 
-      let res = await axios.get("http://127.0.0.1:8000/api/owner/bookings/", {
+      let res = await axios.get("https://spoto-turf-booker-backend.onrender.com/api/owner/bookings/", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       if (res.status === 401) {
         const newToken = await refreshAccessToken();
         if (!newToken) throw new Error("Session expired. Please log in again.");
-        res = await axios.get("http://127.0.0.1:8000/api/owner/bookings/", {
+        res = await axios.get("https://spoto-turf-booker-backend.onrender.com/api/owner/bookings/", {
           headers: { Authorization: `Bearer ${newToken}` },
         });
       }
@@ -39,7 +39,7 @@ function OwnerBookingRequests() {
   const handleAction = async (id, action) => {
     try {
       const res = await axios.post(
-        `http://127.0.0.1:8000/api/booking/${id}/action/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/booking/${id}/action/`,
         { action },
         { headers: { Authorization: `Bearer ${token}` } }
       );

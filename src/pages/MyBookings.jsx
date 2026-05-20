@@ -18,7 +18,7 @@ function MyBookings() {
         return;
       }
 
-      const res = await fetch("http://127.0.0.1:8000/api/bookings/", {
+      const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/bookings/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ function MyBookings() {
     try {
       const token = localStorage.getItem("access");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/bookings/${booking.id}/create-payment/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/bookings/${booking.id}/create-payment/`,
         {
           method: "POST",
           headers: {
@@ -90,7 +90,7 @@ function MyBookings() {
         order_id: data.order_id,
         handler: async function (response) {
           const verifyRes = await fetch(
-            `http://127.0.0.1:8000/api/bookings/${booking.id}/verify-payment/`,
+            `https://spoto-turf-booker-backend.onrender.com/api/bookings/${booking.id}/verify-payment/`,
             {
               method: "POST",
               headers: {

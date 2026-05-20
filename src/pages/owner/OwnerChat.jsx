@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./OwnerChat.css";
 
-const API_BASE = "http://127.0.0.1:8000/api";
+const API_BASE = "https://spoto-turf-booker-backend.onrender.com/api";
 
 // Helper to get initials for avatar
 const initials = (name = "") =>

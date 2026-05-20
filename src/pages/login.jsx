@@ -19,7 +19,7 @@ function Login() {
     if (!username.trim() || !password.trim()) return setError("Please enter both username and password.");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/login/", {
+      const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -56,7 +56,7 @@ function Login() {
         }}
         onLoadedData={() => setLoaded(true)}
       >
-        <source src="http://127.0.0.1:8000/media/backgrounds/ground-gif.mp4" type="video/mp4" />
+        <source src="https://spoto-turf-booker-backend.onrender.com/media/backgrounds/ground-gif.mp4" type="video/mp4" />
       </video>
       <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",

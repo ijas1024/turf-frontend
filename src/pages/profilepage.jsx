@@ -11,7 +11,7 @@ const profileImageUrl = (img) => {
   }
   if (img.startsWith("http")) return img;
   if (!img.startsWith("/")) img = "/" + img;
-  return `http://127.0.0.1:8000${img}`;
+  return `https://spoto-turf-booker-backend.onrender.com${img}`;
 };
 
 function ProfilePage({ setUsername, setProfileImage }) {
@@ -23,7 +23,7 @@ function ProfilePage({ setUsername, setProfileImage }) {
   const token = localStorage.getItem("access");
 
   const fetchProfile = async () => {
-    const res = await fetch("http://127.0.0.1:8000/api/me/", {
+    const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/me/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -79,7 +79,7 @@ function ProfilePage({ setUsername, setProfileImage }) {
     }
     if (profileFile) formData.append("profile_image", profileFile);
 
-    const res = await fetch("http://127.0.0.1:8000/api/update-profile/", {
+    const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/update-profile/", {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

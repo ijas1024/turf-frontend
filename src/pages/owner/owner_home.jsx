@@ -14,7 +14,7 @@ const safeImageUrl = (image) => {
   if (typeof image !== "string") return image;
   if (image.startsWith("http")) return image;
   if (!image.startsWith("/")) image = "/" + image;
-  return `http://127.0.0.1:8000${image}`;
+  return `https://spoto-turf-booker-backend.onrender.com${image}`;
 };
 
 function OwnerHome() {
@@ -30,7 +30,7 @@ function OwnerHome() {
       if (!token) return;
 
       try {
-        const userRes = await fetch("http://127.0.0.1:8000/api/me/", {
+        const userRes = await fetch("https://spoto-turf-booker-backend.onrender.com/api/me/", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -42,7 +42,7 @@ function OwnerHome() {
           setOwnerName(userData.username || "Turf Owner");
         }
 
-        const res = await fetch("http://127.0.0.1:8000/api/owner/turfs/", {
+        const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/owner/turfs/", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -69,7 +69,7 @@ function OwnerHome() {
     try {
       const token = localStorage.getItem("access");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/owner/turfs/${turfId}/delete/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/owner/turfs/${turfId}/delete/`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },

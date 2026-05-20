@@ -31,7 +31,7 @@ function NavbarComp() {
   const fetchNotifications = async () => {
     if (!isLoggedIn) return;
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/notifications/", {
+      const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/notifications/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -56,7 +56,7 @@ function NavbarComp() {
   const markAsRead = async () => {
     if (unread === 0) return;
     try {
-      await fetch("http://127.0.0.1:8000/api/notifications/", {
+      await fetch("https://spoto-turf-booker-backend.onrender.com/api/notifications/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

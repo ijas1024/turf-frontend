@@ -33,7 +33,7 @@ function ManageSlots() {
       setLoading(true);
       const token = localStorage.getItem("access");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/owner/turfs/${turfId}/slots/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/owner/turfs/${turfId}/slots/`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -67,7 +67,7 @@ function ManageSlots() {
       const token = localStorage.getItem("access");
 
       const res = await fetch(
-        `http://127.0.0.1:8000/api/owner/turfs/${turfId}/slots/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/owner/turfs/${turfId}/slots/`,
         {
           method: "POST",
           headers: {
@@ -92,7 +92,7 @@ function ManageSlots() {
     try {
       const token = localStorage.getItem("access");
       const res = await fetch(
-        `http://127.0.0.1:8000/api/owner/turfs/${turfId}/slots/${slotId}/delete/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/owner/turfs/${turfId}/slots/${slotId}/delete/`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },

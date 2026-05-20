@@ -56,7 +56,7 @@ function AddTurf() {
         form.append("longitude", position.lng.toFixed(7));
       }
 
-      const res = await fetch("http://127.0.0.1:8000/api/owner/add-turf/", {
+      const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/owner/add-turf/", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: form,

@@ -62,7 +62,7 @@ function EditTurf() {
 
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/api/owner/turfs/${turf.id}/update/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/owner/turfs/${turf.id}/update/`,
         { method: "PUT", headers: { Authorization: `Bearer ${token}` }, body: form }
       );
       if (!res.ok) throw new Error("Failed to update turf");
@@ -98,7 +98,7 @@ function EditTurf() {
                 src={
                   turf.image.startsWith("http")
                     ? turf.image
-                    : `http://127.0.0.1:8000${turf.image}`
+                    : `https://spoto-turf-booker-backend.onrender.com${turf.image}`
                 }
                 alt="Turf"
                 fluid

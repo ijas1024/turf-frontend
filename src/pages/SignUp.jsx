@@ -21,7 +21,7 @@ function Signup() {
     setError("");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/signup/", {
+      const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/signup/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, phone_number: phoneNumber, password, role }),
@@ -56,7 +56,7 @@ function Signup() {
         }}
         onLoadedData={() => setLoaded(true)}
       >
-        <source src="http://127.0.0.1:8000/media/backgrounds/ground-gif.mp4" type="video/mp4" />
+        <source src="https://spoto-turf-booker-backend.onrender.com/media/backgrounds/ground-gif.mp4" type="video/mp4" />
       </video>
       <div style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "100%",

@@ -17,7 +17,7 @@ const safeTurfImage = (image) => {
   if (typeof image !== "string") return image;
   if (image.startsWith("http")) return image;
   if (!image.startsWith("/")) image = "/" + image;
-  return `http://127.0.0.1:8000${image}`;
+  return `https://spoto-turf-booker-backend.onrender.com${image}`;
 };
 
 function BookingPage() {
@@ -68,7 +68,7 @@ function BookingPage() {
     setError("");
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/api/turfs/${turf.id}/available-slots/?date=${d}`
+        `https://spoto-turf-booker-backend.onrender.com/api/turfs/${turf.id}/available-slots/?date=${d}`
       );
       if (!res.ok) throw new Error("Failed to load slots");
       const data = await res.json();
@@ -94,7 +94,7 @@ function BookingPage() {
     }
     try {
       const payload = { turf: turf.id, slot: selectedSlotId, date };
-      const res = await fetch("http://127.0.0.1:8000/api/bookings/", {
+      const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/bookings/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +139,7 @@ function BookingPage() {
       };
 
       const turfRes = await fetch(
-        `http://127.0.0.1:8000/api/turfs/${turf.id}/chat/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/turfs/${turf.id}/chat/`,
         { headers }
       );
       const turfChats = turfRes.ok ? await turfRes.json() : [];
@@ -147,7 +147,7 @@ function BookingPage() {
       let bookingChats = [];
       if (bookingId) {
         const bRes = await fetch(
-          `http://127.0.0.1:8000/api/bookings/${bookingId}/chat/`,
+          `https://spoto-turf-booker-backend.onrender.com/api/bookings/${bookingId}/chat/`,
           { headers }
         );
         bookingChats = bRes.ok ? await bRes.json() : [];
@@ -178,7 +178,7 @@ function BookingPage() {
 
       if (bookingId) {
         const res = await fetch(
-          `http://127.0.0.1:8000/api/bookings/${bookingId}/chat/`,
+          `https://spoto-turf-booker-backend.onrender.com/api/bookings/${bookingId}/chat/`,
           {
             method: "POST",
             headers,
@@ -193,7 +193,7 @@ function BookingPage() {
       }
 
       const res2 = await fetch(
-        `http://127.0.0.1:8000/api/turfs/${turf.id}/chat/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/turfs/${turf.id}/chat/`,
         {
           method: "POST",
           headers,
@@ -219,7 +219,7 @@ function BookingPage() {
     if (!turf?.id) return;
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/api/turfs/${turf.id}/feedback/`
+        `https://spoto-turf-booker-backend.onrender.com/api/turfs/${turf.id}/feedback/`
       );
       if (res.ok) {
         const data = await res.json();
@@ -239,7 +239,7 @@ function BookingPage() {
     try {
       const token = getToken();
       const res = await fetch(
-        `http://127.0.0.1:8000/api/turfs/${turf.id}/feedback/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/turfs/${turf.id}/feedback/`,
         {
           method: "POST",
           headers: {
@@ -268,7 +268,7 @@ function BookingPage() {
     if (!token) return;
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/api/turfs/${turf.id}/can-review/`,
+        `https://spoto-turf-booker-backend.onrender.com/api/turfs/${turf.id}/can-review/`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

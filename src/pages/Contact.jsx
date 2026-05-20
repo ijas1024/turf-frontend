@@ -23,7 +23,7 @@ function Contact() {
     const token = localStorage.getItem("access") || localStorage.getItem("access_token");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/contact/", {
+      const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/contact/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

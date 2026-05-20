@@ -14,7 +14,7 @@ function OwnerReviews() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/owner/feedbacks/", {
+        const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/owner/feedbacks/", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();

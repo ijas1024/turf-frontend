@@ -50,7 +50,7 @@ function UserHome() {
   useEffect(() => {
     const fetchTurfs = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/turfs/", {
+        const res = await fetch("https://spoto-turf-booker-backend.onrender.com/api/turfs/", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -149,7 +149,7 @@ function UserHome() {
     }
     if (imagePath.startsWith("http")) return imagePath;
     if (!imagePath.startsWith("/")) imagePath = "/" + imagePath;
-    return `http://127.0.0.1:8000${imagePath}`;
+    return `https://spoto-turf-booker-backend.onrender.com${imagePath}`;
   };
 
   return (
