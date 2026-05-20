@@ -1,0 +1,105 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.card-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero banner overlay text shadow */
+.hero-banner h1,
+.hero-banner p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.navbar-turf {
+  background-color: #228B22 !important;
+}
+
+.navbar-turf .nav-link,
+.navbar-turf .navbar-brand {
+  color: white !important;
+}
+
+.navbar-turf .nav-link:hover {
+  color: #d4ffd4 !important;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper to prevent navbar overlap */
+.page-content {
+  padding-top: 56px; /* Navbar height */
+  min-height: calc(100vh - 56px);
+}
+
+/* Center Login and Signup forms */
+.centered-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 56px);
+  background-color: #f0fdf4;
+  padding: 1rem;
+}
+@media (max-width: 576px) {
+  .card img {
+    height: 150px !important;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

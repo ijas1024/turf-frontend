@@ -1,0 +1,408 @@
+/* -------------------------------------------------
+   PART 1 — ROOT LAYOUT + OWNER THEME
+--------------------------------------------------- */
+
+.ocp-root {
+  display: flex;
+  height: 88vh;
+  background: linear-gradient(135deg, #d8e9ff, #f2f7ff, #ffffff);
+  padding: 20px;
+  border-radius: 18px;
+  gap: 20px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+}
+
+/* -------------------------------------------------
+   SIDEBAR
+--------------------------------------------------- */
+
+.ocp-sidebar {
+  width: 320px;
+  padding: 14px;
+  background: #eef6ff;
+  border-radius: 16px;
+  box-shadow: 8px 8px 18px #c6d4e3, -8px -8px 18px #ffffff;
+  overflow-y: auto;
+}
+
+.ocp-sidebar-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  justify-content: space-between;
+}
+
+.ocp-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff, #e6f2ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007bff;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: inset 2px 2px 6px rgba(255, 255, 255, 0.8),
+    6px 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+.ocp-owner-title {
+  font-weight: 700;
+  color: #003a75;
+}
+
+.ocp-owner-sub {
+  font-size: 12px;
+  color: #486b9b;
+}
+
+.ocp-live-indicator {
+  font-size: 13px;
+  color: #486b9b;
+  font-weight: 600;
+}
+
+.ocp-section-title {
+  margin-top: 10px;
+  color: #486b9b;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.ocp-empty {
+  text-align: center;
+  padding: 12px;
+  color: #7a8fb0;
+}
+
+/* Conversation row */
+.ocp-convo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #003a75;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.22s ease;
+}
+
+.ocp-convo:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.ocp-convo.active {
+  background: #007bff;
+  color: #ffffff;
+  box-shadow: 6px 8px 16px rgba(0, 123, 255, 0.12);
+}
+
+.ocp-unread-badge {
+  background: #007bff;
+  color: #fff;
+  padding: 6px 9px;
+  font-weight: 700;
+  border-radius: 12px;
+  min-width: 36px;
+  text-align: center;
+  animation: ocp-badgePulse 1.6s infinite;
+}
+
+/* -------------------------------------------------
+   CHAT PANEL
+--------------------------------------------------- */
+
+.ocp-chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f6fbff;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 10px 10px 22px #cfdbe9, -10px -10px 22px #ffffff;
+}
+
+/* header */
+.ocp-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ocp-chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ocp-chat-name {
+  font-weight: 800;
+  color: #003a75;
+}
+
+.ocp-chat-sub {
+  font-size: 13px;
+  color: #6d86b0;
+}
+
+.ocp-active-dot {
+  width: 12px;
+  height: 12px;
+  background: #00c46a;
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(0, 196, 106, 0.2);
+}
+
+/* -------------------------------------------------
+   MESSAGE LIST WRAPPER
+--------------------------------------------------- */
+
+.ocp-messages-wrap {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* -------------------------------------------------
+   MESSAGE ITEM ROW
+--------------------------------------------------- */
+
+/* -------------------------------------------------
+   MESSAGE ITEM ROW
+--------------------------------------------------- */
+
+.ocp-msg-item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.ocp-msg-item.me {
+  justify-content: flex-end;
+}
+
+.ocp-msg-item.them {
+  justify-content: flex-start;
+}
+
+/* avatar alignment */
+.ocp-msg-left {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.ocp-msg-right {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+
+/* -------------------------------------------------
+   PERFECT WHATSAPP / MESSENGER STYLE BUBBLE FIX
+--------------------------------------------------- */
+
+.ocp-bubble {
+  display: inline-block;
+  max-width: 75%;
+  width: auto;
+  min-width: 48px;
+
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.45;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+
+/* RECEIVER */
+.them-bubble {
+  background: #ffffff;
+  color: #003a75;
+  border: 1px solid #e1e7f0;
+  border-bottom-left-radius: 6px;
+}
+
+/* SENDER */
+.me-bubble {
+  background: #007bff;
+  color: #fff;
+  border-bottom-right-radius: 6px;
+
+  display: inline-block !important;
+  width: auto !important;
+  max-width: 75% !important;
+}
+
+
+/* sender name */
+.ocp-bubble-sender {
+  font-size: 12px;
+  font-weight: 600;
+  color: #005aa3;
+  margin-bottom: 4px;
+}
+
+/* time inside bubble */
+.ocp-bubble-time,
+.ocp-bubble-time.me-time {
+  display: block;
+  text-align: right;
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* -------------------------------------------------
+   TYPING INDICATOR
+--------------------------------------------------- */
+
+.ocp-typing-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.ocp-typing-bubble {
+  padding: 8px 12px;
+  background: #d9ecff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ocp-typing-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #004b88;
+}
+
+.ocp-typing-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.ocp-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #007bff;
+  animation: ocp-dotMove 0.9s infinite;
+}
+
+.ocp-dot:nth-child(2) {
+  animation-delay: 120ms;
+}
+.ocp-dot:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+/* -------------------------------------------------
+   INPUT BOX
+--------------------------------------------------- */
+
+.ocp-input-wrap {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #eef6ff;
+  border-radius: 16px;
+  box-shadow: inset 4px 6px 10px rgba(255, 255, 255, 0.9),
+    inset -4px -6px 10px rgba(0, 0, 0, 0.03);
+}
+
+.ocp-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  font-size: 14px;
+  box-shadow: inset 2px 4px 8px rgba(198, 214, 230, 0.8);
+}
+
+.ocp-send-btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #007bff, #0066d6);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 6px 8px 18px rgba(3, 84, 162, 0.18),
+    -4px -4px 10px rgba(255, 255, 255, 0.6);
+}
+
+.ocp-send-btn:disabled {
+  background: #cfe8ff;
+  color: #7aaeea;
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------- */
+
+@keyframes ocp-dotMove {
+  0% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes ocp-badgePulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 123, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+/* -------------------------------------------------
+   RESPONSIVE FIXES
+--------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .ocp-root {
+    padding: 12px;
+  }
+  .ocp-sidebar {
+    width: 260px;
+  }
+}
